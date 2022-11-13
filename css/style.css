@@ -121,6 +121,12 @@ h3 { font-size: var(--fs-h3) }
     margin-bottom: 1em;
 }
 
+.section_subtitle-work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 1em;
+}
+
 /* header */
 
 nav { display: none; }
@@ -218,9 +224,53 @@ nav { display: none; }
     margin: 0 auto;
 }
 
+.about-me_img {
+    box-shadow: var(--bs);
+}
+
 @media (min-width: 600px) {
     .about-me {
         display:grid;
         grid-template-columns: 1fr 200px;;
+        grid-template-areas:
+             "title img"
+             "subtitle img"
+             "text img";
+             grid-column-gap: 2em;
+      }
+
+      .section_title-about {
+         grid-area: title;
+      }
+
+      .section_title-about {
+         grid-column: 1 /-1;
+         grid-row: 2;
+         position: relative;
+         left: -1em;
+         width: calc(100% + 2em);
+         padding-left: 1em;
+         padding-right: calc(200px + 4em);
+      }
+
+      .about-me_img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
       }
     }
+
+    /* My work */
+
+    .my-work {
+        background-color: var(--clr-dark);
+        color: var(--clr-light);
+        text-align: center;
+    }
+
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr, minmax(300px, 1rf));
+    }
+
+   
